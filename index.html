@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Your Name | Academic Homepage</title>
+    <title>Mengqi Shi | Academic Homepage</title>
     <meta
       name="description"
       content="Academic homepage featuring research interests, experience, publications, teaching, and links."
@@ -14,21 +14,25 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css"
+    />
     <link rel="stylesheet" href="css/main.css" />
   </head>
   <body>
     <!-- Sticky Navigation -->
     <header class="site-header">
       <div class="container nav-wrap">
-        <a class="brand" href="#home">Your Name</a>
+        <a class="brand" href="#home">Mengqi Shi</a>
         <nav aria-label="Primary navigation">
           <ul class="nav-list">
             <li><a href="#home">Home</a></li>
-            <li><a href="#research">Research</a></li>
+            <li><a href="#research">Research Interests</a></li>
             <li><a href="#experience">Research Experience</a></li>
             <li><a href="#publications">Publications</a></li>
             <li><a href="#teaching">Teaching</a></li>
-            <li><a href="#links">Links</a></li>
+            <li><a href="#random">Random</a></li>
           </ul>
         </nav>
       </div>
@@ -44,7 +48,7 @@
             </div>
 
             <div id="news" class="news-card">
-              <h2 class="card-title">News</h2>
+              <h2 class="card-title"><i class="far fa-newspaper" aria-hidden="true"></i>News</h2>
               <ul class="compact-list">
                 <li><span class="news-date">[YYYY.MM]</span> Placeholder update about paper submission.</li>
                 <li><span class="news-date">[YYYY.MM]</span> Placeholder update about workshop presentation.</li>
@@ -55,20 +59,20 @@
 
           <div class="hero-right">
             <p class="eyebrow">Academic Homepage</p>
-            <h1>Your Name</h1>
-            <p class="hero-title">Ph.D. Student in [Your Field], [Your Institution]</p>
+            <h1>Mengqi Shi</h1>
+            <p class="hero-title">Master Student in HCI, University of Washington</p>
             <p class="hero-bio">
               I am interested in designing and understanding <strong>[Research Theme A]</strong>,
               <strong>[Research Theme B]</strong>, and <strong>[Research Theme C]</strong>. My work focuses on
               building rigorous, human-centered methods that connect foundational research with real-world impact.
             </p>
-            <div class="hero-links" aria-label="External profile links">
-              <a href="https://example.com/cv" target="_blank" rel="noreferrer">CV</a>
-              <a href="https://github.com/yourname" target="_blank" rel="noreferrer">GitHub</a>
-              <a href="https://scholar.google.com/" target="_blank" rel="noreferrer">Google Scholar</a>
-              <a href="https://linkedin.com/in/yourname" target="_blank" rel="noreferrer">LinkedIn</a>
-              <a href="mailto:your.email@domain.edu">Email</a>
-            </div>
+            <ul class="hero-links" aria-label="External profile links">
+              <li><a href="https://scholar.google.com/" target="_blank" rel="noreferrer"><i class="fas fa-graduation-cap" aria-hidden="true"></i>Google Scholar</a></li>
+              <li><a href="https://linkedin.com/in/yourname" target="_blank" rel="noreferrer"><i class="fab fa-linkedin" aria-hidden="true"></i>LinkedIn</a></li>
+              <li><a href="https://github.com/yourname" target="_blank" rel="noreferrer"><i class="fab fa-github" aria-hidden="true"></i>GitHub</a></li>
+              <li><a href="mailto:shi21@uw.edu"><i class="fas fa-envelope" aria-hidden="true"></i>Email</a></li>
+              <li><a href="https://example.com/cv" target="_blank" rel="noreferrer"><i class="far fa-file-alt" aria-hidden="true"></i>CV</a></li>
+            </ul>
           </div>
         </div>
       </section>
@@ -76,7 +80,7 @@
       <!-- Research Section -->
       <section id="research" class="section container">
         <div class="section-heading">
-          <h2>Research</h2>
+          <h2>Research Interests</h2>
           <p>
             The core of my work centers on three research directions. Click each card for an expanded page with
             project context and related papers.
@@ -84,8 +88,8 @@
         </div>
 
         <div class="research-grid">
-          <article class="research-card">
-            <h3><a href="research/human-ai-collaboration.html">Human-AI Collaboration in Everyday Work</a></h3>
+          <a class="research-card" href="research/human-ai-collaboration.html" aria-label="Open research page: Human-AI Collaboration in Everyday Work">
+            <h3>Human-AI Collaboration in Everyday Work</h3>
             <p>
               I study how AI systems can support decision-making and creativity while preserving user agency,
               transparency, and trust.
@@ -96,10 +100,10 @@
               <li>Trust Calibration</li>
               <li>Workflow Design</li>
             </ul>
-          </article>
+          </a>
 
-          <article class="research-card">
-            <h3><a href="research/learning-technologies.html">Learning Technologies and Adaptive Feedback</a></h3>
+          <a class="research-card" href="research/learning-technologies.html" aria-label="Open research page: Learning Technologies and Adaptive Feedback">
+            <h3>Learning Technologies and Adaptive Feedback</h3>
             <p>
               I explore adaptive educational tools that provide actionable feedback and improve engagement for
               diverse learners.
@@ -110,10 +114,10 @@
               <li>Feedback Design</li>
               <li>EdTech</li>
             </ul>
-          </article>
+          </a>
 
-          <article class="research-card">
-            <h3><a href="research/responsible-evaluation.html">Research Methods for Responsible Evaluation</a></h3>
+          <a class="research-card" href="research/responsible-evaluation.html" aria-label="Open research page: Research Methods for Responsible Evaluation">
+            <h3>Research Methods for Responsible Evaluation</h3>
             <p>
               I develop mixed-method evaluation frameworks to measure usability, fairness, and long-term adoption in
               socio-technical systems.
@@ -124,7 +128,7 @@
               <li>Evaluation</li>
               <li>Ethics</li>
             </ul>
-          </article>
+          </a>
         </div>
       </section>
 
@@ -236,19 +240,20 @@
       </section>
 
       <!-- Links Section -->
-      <section id="links" class="section container">
+      <section id="random" class="section container">
         <div class="section-heading">
-          <h2>Links</h2>
-          <p>Find more details across these profiles.</p>
+          <h2>Random</h2>
+          <p>A small corner for side projects and everyday interests.</p>
         </div>
 
-        <ul class="links-list">
-          <li><a href="https://scholar.google.com/" target="_blank" rel="noreferrer">Google Scholar</a></li>
-          <li><a href="https://linkedin.com/in/yourname" target="_blank" rel="noreferrer">LinkedIn</a></li>
-          <li><a href="https://github.com/yourname" target="_blank" rel="noreferrer">GitHub</a></li>
-          <li><a href="https://twitter.com/yourname" target="_blank" rel="noreferrer">Twitter</a></li>
-          <li><a href="mailto:your.email@domain.edu">Email</a></li>
-        </ul>
+        <div class="personal-mini">
+          <ul class="links-list links-list--quiet">
+            <li><a href="https://example.com/photography" target="_blank" rel="noreferrer">Photography Page</a></li>
+            <li><a href="https://example.com/design" target="_blank" rel="noreferrer">Design Notebook</a></li>
+            <li><a href="https://example.com/reading" target="_blank" rel="noreferrer">Reading List</a></li>
+            <li><a href="https://example.com/sketches" target="_blank" rel="noreferrer">Sketchbook</a></li>
+          </ul>
+        </div>
       </section>
     </main>
 

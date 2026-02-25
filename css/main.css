@@ -90,8 +90,8 @@ img {
 .brand:hover,
 .brand:focus-visible {
   color: var(--accent-deep);
-  letter-spacing: 0.015em;
-  transform: scale(1.1) translateX(2px);
+  letter-spacing: 0.018em;
+  transform: scale(1.16) translateX(3px);
 }
 
 .nav-list {
@@ -119,9 +119,9 @@ img {
   left: 0;
   bottom: -2px;
   width: 0;
-  height: 1px;
-  background: rgba(166, 110, 131, 0.68);
-  transition: width 0.2s ease;
+  height: 1.5px;
+  background: rgba(166, 110, 131, 0.78);
+  transition: width 0.22s ease;
 }
 
 .nav-list a:hover,
@@ -171,6 +171,34 @@ img {
 .card-title {
   margin: 0 0 0.7rem;
   font-size: 1.03rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.42rem;
+}
+
+.card-title i {
+  font-size: 0.92rem;
+  color: var(--accent-deep);
+  opacity: 0.88;
+}
+
+.news-card:hover .card-title i {
+  animation: news-icon-wiggle 0.5s ease;
+}
+
+@keyframes news-icon-wiggle {
+  0% {
+    transform: rotate(0deg);
+  }
+  30% {
+    transform: rotate(-6deg);
+  }
+  60% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 .compact-list {
@@ -212,28 +240,42 @@ h1 {
 }
 
 .hero-links {
+  list-style: none;
+  padding: 0;
+  margin: 1.1rem 0 0;
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem 0.65rem;
-  margin-top: 1.1rem;
   font-size: 0.95rem;
 }
 
+.hero-links li {
+  display: inline-flex;
+  align-items: center;
+}
+
+.hero-links li + li::before {
+  content: "|";
+  margin-right: 0.65rem;
+  color: rgba(55, 53, 47, 0.4);
+}
+
 .hero-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
   text-decoration: none;
   color: var(--text-soft);
   border-bottom: 1px solid transparent;
   padding: 0.05rem 0;
 }
 
-.hero-links a::before {
-  content: "[";
-  color: rgba(55, 53, 47, 0.5);
-}
-
-.hero-links a::after {
-  content: "]";
-  color: rgba(55, 53, 47, 0.5);
+.hero-links a i {
+  font-size: 0.95rem;
+  width: 1rem;
+  text-align: center;
+  color: rgba(55, 53, 47, 0.72);
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .hero-links a:hover,
@@ -241,6 +283,12 @@ h1 {
   color: var(--accent-deep);
   border-bottom-color: rgba(166, 110, 131, 0.5);
   background: none;
+}
+
+.hero-links a:hover i,
+.hero-links a:focus-visible i {
+  color: var(--accent-deep);
+  transform: translateY(-1px);
 }
 
 .section-heading {
@@ -267,35 +315,48 @@ h2 {
 }
 
 .research-card {
+  position: relative;
   background: #fff;
   border: 1px solid #e3e3e3;
   border-radius: 8px;
   padding: 1.1rem 1.1rem 1.2rem;
   box-shadow: none;
-  transition: border-color 0.22s ease, box-shadow 0.22s ease, transform 0.22s ease;
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 0.22s ease, box-shadow 0.22s ease, transform 0.22s ease, background-color 0.22s ease;
 }
 
 .research-card:hover {
-  border-color: #d4ccd0;
-  box-shadow: 0 8px 20px rgba(45, 35, 40, 0.07);
-  transform: translateY(-2px);
+  border-color: #bfaeb7;
+  background: #fffdfd;
+  box-shadow: 0 12px 28px rgba(40, 32, 36, 0.12), 0 2px 6px rgba(166, 110, 131, 0.12);
+  transform: translateY(-3px);
+}
+
+.research-card:focus-visible {
+  outline: 2px solid rgba(166, 110, 131, 0.45);
+  outline-offset: 2px;
 }
 
 .research-card h3 {
   margin: 0;
   font-size: 1.1rem;
   line-height: 1.35;
+  transition: color 0.2s ease;
+  display: inline;
+  border-bottom: 1.5px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
 }
 
-.research-card h3 a {
-  color: var(--text-main);
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
+.research-card:hover h3 {
+  color: #2f2a2d;
 }
 
-.research-card h3 a:hover,
-.research-card h3 a:focus-visible {
-  border-bottom-color: var(--accent);
+.research-card:hover h3,
+.research-card:focus-visible h3,
+.research-card h3:hover {
+  border-bottom-color: rgba(166, 110, 131, 0.75);
 }
 
 .research-card p {
@@ -329,7 +390,7 @@ h2 {
 }
 
 .tag-list li:hover {
-  transform: translateY(-1px);
+  transform: translateY(-1.5px);
 }
 
 /* Research experience timeline */
@@ -347,7 +408,7 @@ h2 {
 }
 
 .timeline-item:hover {
-  border-bottom-color: #d8d2d5;
+  border-bottom-color: #cfc6cb;
 }
 
 .timeline-item:last-child {
@@ -430,9 +491,9 @@ h2 {
 }
 
 .service-card:hover {
-  border-color: #d4ccd0;
-  box-shadow: 0 8px 20px rgba(45, 35, 40, 0.07);
-  transform: translateY(-2px);
+  border-color: #cbc1c6;
+  box-shadow: 0 10px 24px rgba(45, 35, 40, 0.09);
+  transform: translateY(-3px);
 }
 
 .service-card h3 {
@@ -472,6 +533,27 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   gap: 0.9rem 1.3rem;
+}
+
+.personal-mini {
+  border-top: 1px dashed #e7e2e4;
+  padding-top: 0.8rem;
+}
+
+.links-list--quiet {
+  font-size: 0.92rem;
+  gap: 0.6rem 1rem;
+}
+
+.links-list--quiet a {
+  color: rgba(55, 53, 47, 0.72);
+  text-decoration-color: rgba(55, 53, 47, 0.22);
+}
+
+.links-list--quiet a:hover,
+.links-list--quiet a:focus-visible {
+  color: var(--accent-deep);
+  text-decoration-color: rgba(166, 110, 131, 0.45);
 }
 
 /* Footer */
@@ -631,12 +713,16 @@ h2 {
   .structured-list li {
     gap: 0.25rem;
   }
+
+  .hero-links li + li::before {
+    margin-right: 0.5rem;
+  }
 }
 
 @media (max-width: 980px) {
   .brand:hover,
   .brand:focus-visible {
-    transform: scale(1.04);
+    transform: scale(1.08);
   }
 }
 
