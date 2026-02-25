@@ -110,7 +110,7 @@ img {
   font-size: 0.95rem;
   padding-bottom: 0.18rem;
   border-bottom: none;
-  transition: color 0.18s ease;
+  transition: color 0.18s ease, transform 0.18s ease;
 }
 
 .nav-list a::after {
@@ -127,6 +127,7 @@ img {
 .nav-list a:hover,
 .nav-list a:focus-visible {
   color: var(--text-main);
+  transform: translateY(-1px);
 }
 
 .nav-list a:hover::after,
@@ -142,16 +143,24 @@ img {
   align-items: start;
 }
 
+.hero-left {
+  animation: gentle-rise 0.45s ease both;
+}
+
+.hero-right {
+  animation: gentle-rise 0.55s ease both;
+}
+
 .profile-placeholder {
   width: 250px;
-  aspect-ratio: 1 / 1;
+  height: 250px;
   border-radius: 50%;
+  object-fit: cover;
+  object-position: 80% 82%;
+  margin-left: -8px;
   border: 1px solid var(--line);
+  display: block;
   background: #fafafa;
-  color: #9a9693;
-  font-size: 0.95rem;
-  display: grid;
-  place-items: center;
 }
 
 .news-card {
@@ -184,6 +193,17 @@ img {
 
 .news-card:hover .card-title i {
   animation: news-icon-wiggle 0.5s ease;
+}
+
+@keyframes gentle-rise {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes news-icon-wiggle {
@@ -449,27 +469,150 @@ h2 {
   margin-bottom: 0.35rem;
 }
 
-/* Publications */
-.publication-group {
-  margin-bottom: 1.2rem;
+/* Education */
+.education-list {
+  display: grid;
+  gap: 0.9rem;
 }
 
-.publication-group h3 {
-  margin: 0 0 0.35rem;
-  font-size: 1rem;
-  color: var(--accent-deep);
+.education-item {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 1rem;
+  align-items: start;
 }
 
-.publication-list {
+.edu-period {
+  margin: 0.2rem 0 0;
+  font-size: 0.88rem;
+  color: rgba(55, 53, 47, 0.62);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.edu-content {
+  border-left: 2px solid #ddd6da;
+  padding: 0.1rem 0 0.35rem 0.95rem;
+}
+
+.edu-content h3 {
   margin: 0;
-  padding-left: 1.1rem;
+  font-size: 1.05rem;
 }
 
-.publication-list li {
-  margin-bottom: 0.46rem;
+.edu-content ul {
+  margin: 0.45rem 0 0;
+  padding-left: 1.05rem;
 }
 
-.publication-list a,
+.edu-content li {
+  margin-bottom: 0.28rem;
+}
+
+/* Publications */
+.publication-stream {
+  display: grid;
+  gap: 1rem;
+}
+
+.pub-item {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 0.9rem;
+  align-items: start;
+  padding: 0.35rem 0 0.8rem;
+  border-bottom: 1px solid #eee8eb;
+}
+
+.pub-item:last-child {
+  border-bottom: none;
+}
+
+.pub-thumb {
+  width: 96px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #e6dfe3;
+  background: linear-gradient(145deg, #f7f3f5, #efeaed);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.pub-body h3 {
+  margin: 0.06rem 0 0.3rem;
+  font-size: 1.05rem;
+  line-height: 1.38;
+}
+
+.pub-year {
+  margin: 0;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  color: rgba(55, 53, 47, 0.58);
+}
+
+.pub-meta {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text-soft);
+}
+
+.pub-keywork {
+  margin: 0.34rem 0 0;
+  font-size: 0.93rem;
+  color: rgba(55, 53, 47, 0.8);
+}
+
+.pub-tags {
+  list-style: none;
+  margin: 0.42rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.pub-tags li {
+  border-radius: 7px;
+  padding: 0.18rem 0.56rem;
+  font-size: 0.78rem;
+  line-height: 1.2;
+  color: rgba(55, 53, 47, 0.8);
+  border: 1px solid transparent;
+}
+
+.pub-tags .tag-method {
+  background: #f2edf0;
+  border-color: #e8dde3;
+}
+
+.pub-tags .tag-system {
+  background: #edf2f2;
+  border-color: #dde7e7;
+}
+
+.pub-tags .tag-analysis {
+  background: #f3f0ec;
+  border-color: #e8e0d7;
+}
+
+.pub-tags .tag-domain {
+  background: #f0edf4;
+  border-color: #e2dcef;
+}
+
+.pub-links {
+  margin: 0.34rem 0 0;
+  font-size: 0.92rem;
+}
+
+.pub-item:hover .pub-thumb {
+  transform: translateY(-1px) scale(1.03);
+  border-color: #d7c8cf;
+  box-shadow: 0 6px 16px rgba(55, 45, 50, 0.1);
+}
+
+.pub-links a,
 .links-list a {
   color: var(--accent-deep);
   text-decoration-thickness: 1px;
@@ -548,12 +691,14 @@ h2 {
 .links-list--quiet a {
   color: rgba(55, 53, 47, 0.72);
   text-decoration-color: rgba(55, 53, 47, 0.22);
+  transition: color 0.2s ease, text-decoration-color 0.2s ease, transform 0.2s ease;
 }
 
 .links-list--quiet a:hover,
 .links-list--quiet a:focus-visible {
   color: var(--accent-deep);
   text-decoration-color: rgba(166, 110, 131, 0.45);
+  transform: translateX(2px);
 }
 
 /* Footer */
@@ -695,6 +840,8 @@ h2 {
 
   .profile-placeholder {
     width: 210px;
+    height: 210px;
+    margin-left: -4px;
   }
 
   .research-grid,
@@ -708,6 +855,25 @@ h2 {
 
   .detail-grid {
     grid-template-columns: 1fr;
+  }
+
+  .pub-item {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+  }
+
+  .pub-thumb {
+    width: 120px;
+    height: 86px;
+  }
+
+  .education-item {
+    grid-template-columns: 1fr;
+    gap: 0.3rem;
+  }
+
+  .edu-content {
+    padding-left: 0.78rem;
   }
 
   .structured-list li {
