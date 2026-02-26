@@ -100,7 +100,8 @@ img {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem 1.4rem;
+  gap: 1rem 1.75rem;
+  margin-left: -0.45rem;
 }
 
 .nav-list a {
