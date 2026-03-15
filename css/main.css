@@ -954,6 +954,114 @@ h2 {
   padding-left: 1.15rem;
 }
 
+.design-section {
+  margin-top: 1.6rem;
+}
+
+.design-section__note {
+  margin: 0.45rem 0 0;
+  color: var(--text-soft);
+}
+
+.design-project {
+  border-top: 1px solid var(--line);
+  padding: 1.15rem 0 1.25rem;
+}
+
+.design-project:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.design-project__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.design-project h3,
+.design-archive-item h3 {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.design-project__meta,
+.design-archive-item__meta {
+  margin: 0.2rem 0 0;
+  color: var(--text-soft);
+  font-size: 0.93rem;
+}
+
+.design-project__links,
+.design-archive-item__links {
+  margin: 0;
+  white-space: nowrap;
+  font-size: 0.92rem;
+}
+
+.design-project p + .design-skill-list {
+  margin-top: 0.7rem;
+}
+
+.design-skill-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.82rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.38rem;
+}
+
+.design-skill {
+  border-radius: 999px;
+  padding: 0.22rem 0.62rem;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: rgba(55, 53, 47, 0.82);
+  border: 1px solid transparent;
+}
+
+.design-skill--hci,
+.design-skill--product {
+  background: #f2edf0;
+  border-color: #e8dde3;
+}
+
+.design-skill--healthcare,
+.design-skill--branding {
+  background: #edf2f2;
+  border-color: #dde7e7;
+}
+
+.design-skill--wearable,
+.design-skill--enclosure,
+.design-skill--mechanism {
+  background: #f3f0ec;
+  border-color: #e8e0d7;
+}
+
+.design-skill--app,
+.design-skill--prototyping,
+.design-skill--printing,
+.design-skill--laser {
+  background: #f0edf4;
+  border-color: #e2dcef;
+}
+
+.design-archive-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin-top: 0.95rem;
+}
+
+.design-archive-item {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.95rem 1rem;
+  background: #fff;
+}
+
 /* Responsive layout */
 @media (max-width: 980px) {
   .hero-grid {
@@ -977,6 +1085,10 @@ h2 {
   .service-grid {
     grid-template-columns: 1fr;
   }
+
+  .design-archive-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 680px) {
@@ -993,6 +1105,10 @@ h2 {
   .research-grid,
   .structured-list li {
     grid-template-columns: 1fr;
+  }
+
+  .design-project__head {
+    flex-direction: column;
   }
 
   .detail-hero {
