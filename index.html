@@ -21,6 +21,11 @@
     <link rel="stylesheet" href="css/main.css" />
   </head>
   <body>
+    <div class="cursor-trail" aria-hidden="true">
+      <canvas class="cursor-trail__canvas"></canvas>
+      <div class="cursor-trail__lead"></div>
+    </div>
+
     <!-- Sticky Navigation -->
     <header class="site-header">
       <div class="container nav-wrap">
@@ -94,9 +99,9 @@
               ideas, or just making friends! :)
             </p>
             <ul class="hero-links" aria-label="External profile links">
-              <li><a href="https://scholar.google.com/" target="_blank" rel="noreferrer"><i class="fas fa-graduation-cap" aria-hidden="true"></i>Google Scholar</a></li>
-              <li><a href="https://linkedin.com/in/yourname" target="_blank" rel="noreferrer"><i class="fab fa-linkedin" aria-hidden="true"></i>LinkedIn</a></li>
-              <li><a href="https://github.com/yourname" target="_blank" rel="noreferrer"><i class="fab fa-github" aria-hidden="true"></i>GitHub</a></li>
+              <li><a href="https://scholar.google.com/citations?user=P-Hcnm0AAAAJ&hl=en&authuser=1" target="_blank" rel="noreferrer"><i class="fas fa-graduation-cap" aria-hidden="true"></i>Google Scholar</a></li>
+              <li><a href="https://www.linkedin.com/in/mengqi-shi-844284231/" target="_blank" rel="noreferrer"><i class="fab fa-linkedin" aria-hidden="true"></i>LinkedIn</a></li>
+              <li><a href="https://github.com/MengqiS21" target="_blank" rel="noreferrer"><i class="fab fa-github" aria-hidden="true"></i>GitHub</a></li>
               <li><a href="mailto:shi21@uw.edu"><i class="fas fa-envelope" aria-hidden="true"></i>Email</a></li>
               <li><a href="https://example.com/cv" target="_blank" rel="noreferrer"><i class="far fa-file-alt" aria-hidden="true"></i>CV</a></li>
             </ul>
@@ -163,7 +168,7 @@
       <section id="publications" class="section container">
         <div class="section-heading">
           <h2>Publications</h2>
-          <p>Published works and work in prograss</p>
+          <p>Selected publications and manuscripts in progress.</p>
         </div>
 
         <div class="publication-stream">
@@ -172,32 +177,32 @@
             <div class="pub-body">
               <p class="pub-year">2026</p>
               <h3><em>When Humans Don't Feel Like an Option: Contextual Factors That Shape When Older Adults Turn to Conversational AI for Emotional Support</em></h3>
-              <p class="pub-meta">Mengqi Shi, Tianqi Song, Zicheng Zhu, Yi-Chieh Lee. CHI, 2026.</p>
+              <p class="pub-meta">Mengqi Shi, Tianqi Song, Zicheng Zhu, Yi-Chieh Lee. CHI EA 2026.</p>
               <p class="pub-keywork"><strong>TL;DR: </strong> Older adults sometimes prefer AI over friends/family for emotional support — not out of general preference, but in specific moments: when loved ones are unavailable, to avoid feeling like a burden, or to protect their dignity. Interviews with 18 older adults reveal how concerns around independence and self-image drive these situational choices, with implications for designing more context-aware AI companions.</p>
               <ul class="pub-tags" aria-label="Skills and methods">
                 <li class="tag-method">Qualitative Methods</li>
-                <li class="tag-system">Respobsible AI</li>
+                <li class="tag-system">Responsible AI</li>
                 <li class="tag-analysis">Thematic Analysis</li>
                 <li class="tag-domain">Human-AI Interaction</li>
               </ul>
-              <p class="pub-links"><a href="#">PDF</a> | <a href="#">Code</a></p>
+              <p class="pub-links"><a href="assets/images/publications/2603.01413v1.pdf">PDF</a> | <a href="https://arxiv.org/abs/2603.01413" target="_blank" rel="noreferrer">arXiv</a></p>
             </div>
           </article>
 
           <article class="pub-item">
             <img class="pub-thumb" src="assets/images/publications/paper-02.svg" alt="Paper thumbnail placeholder" />
             <div class="pub-body">
-              <p class="pub-year">2025</p>
-              <h3><em>Placeholder Title for Earlier Work</em></h3>
-              <p class="pub-meta">Your Name, Coauthor C. Journal/Conference Name, 2025.</p>
-              <p class="pub-keywork"><strong>TL;DR: </strong> Studies how [placeholder method] improves [placeholder outcome] and reports practical design implications for real deployments.</p>
+              <p class="pub-year">2023</p>
+              <h3><em>Taking Stock of Concept Inventories in Computing Education: A Systematic Literature Review</em></h3>
+              <p class="pub-meta">Mengqi Shi, collaborators. International Computing Education Research Conference (ICER), 2023.</p>
+              <p class="pub-keywork"><strong>TL;DR: </strong> This work synthesizes the concept inventory literature in computing education through a review of 65 papers and large-scale dataset analysis, surfacing major trends, gaps, and methodological patterns in how conceptual understanding is assessed.</p>
               <ul class="pub-tags" aria-label="Skills and methods">
-                <li class="tag-method">Controlled Study</li>
-                <li class="tag-analysis">Qualitative Coding</li>
-                <li class="tag-system">Evaluation Pipeline</li>
-                <li class="tag-domain">Learning Technologies</li>
+                <li class="tag-method">Literature Review</li>
+                <li class="tag-analysis">Data Visualization</li>
+                <li class="tag-system">Computing Education</li>
+                <li class="tag-domain">Research Synthesis</li>
               </ul>
-              <p class="pub-links"><a href="#">PDF</a> | <a href="#">Code</a></p>
+              <p class="pub-links"><a href="assets/images/publications/3568813.3600120.pdf">PDF</a> | <a href="https://dl.acm.org/doi/10.1145/3568813.3600120">ACM</a></p>
             </div>
           </article>
         </div>
@@ -212,28 +217,106 @@
 
         <div class="timeline" role="list">
           <article class="timeline-item" role="listitem">
-            <header>
-              <h3>Research Assistant</h3>
-              <p class="meta-line">[Lab Name], [Institution] | [YYYY] - Present</p>
-              <p class="meta-sub">Supervisor: Prof. [Name]</p>
+            <header class="timeline-header">
+              <p class="timeline-lab">AI4SG Lab</p>
+              <p class="timeline-inst">National University of Singapore</p>
             </header>
-            <ul>
-              <li>Designed and ran controlled studies on [placeholder topic].</li>
-              <li>Built prototypes to evaluate [placeholder system behavior].</li>
-              <li>Co-authored manuscripts and prepared conference submissions.</li>
-            </ul>
+
+            <div class="project-block">
+              <h3>Emotional Safety Boundaries and Controls in Older Adults' Use of AI Tools for Companionship <span class="role-badge role-badge--lead">Lead Researcher</span></h3>
+              <p class="meta-line">04/2025 - Present</p>
+              <p class="meta-sub">Advisors: Yi-Chieh (EJ) Lee, Tianqi (Holly) Song</p>
+              <ul>
+                <li>Investigate how older adults establish emotional safety boundaries when using conversational AI for companionship and support.</li>
+                <li>Co-authored the accepted CHI EA 2026 paper on contextual factors shaping when older adults turn to AI for emotional support.</li>
+                <li>Lead qualitative research synthesis and translate findings into design implications for safer, more context-aware companion systems.</li>
+              </ul>
+            </div>
+
+            <div class="project-block">
+              <h3>Peer Conversational Agents Support Older Adults in Learning about AI <span class="role-badge role-badge--assistant">Research Assistant</span></h3>
+              <p class="meta-line">04/2025 - Present</p>
+              <p class="meta-sub">Advisors: Yi-Chieh (EJ) Lee, Tianqi (Holly) Song</p>
+              <ul>
+                <li>Co-conducted semi-structured interviews with older adults aged 50+ to understand AI literacy learning needs and preferences.</li>
+                <li>Verified and cleaned transcripts, handled session logistics, and supported a manuscript submitted to IJHCI as third author.</li>
+                <li>Performed inductive thematic coding, double-coding reconciliation, and affinity diagramming to derive four peer-agent design guidelines.</li>
+              </ul>
+            </div>
           </article>
 
           <article class="timeline-item" role="listitem">
-            <header>
-              <h3>Visiting Research Intern</h3>
-              <p class="meta-line">[Research Group], [Institution] | [YYYY] - [YYYY]</p>
+            <header class="timeline-header">
+              <p class="timeline-lab">ACE Lab</p>
+              <p class="timeline-inst">University of Washington</p>
             </header>
-            <ul>
-              <li>Investigated user needs through interviews and thematic analysis.</li>
-              <li>Implemented experiment pipelines and statistical analysis scripts.</li>
-              <li>Presented findings to an interdisciplinary research team.</li>
-            </ul>
+
+            <div class="project-block">
+              <h3>PlayBridge: Making Educational Games More Accessible for Children with Motor Impairments <span class="role-badge role-badge--assistant">Research Assistant</span></h3>
+              <p class="meta-line">04/2025 - Present</p>
+              <p class="meta-sub">Advisors: Jacob O. Wobbrock, James A. Fogarty, Mingyuan Zhong</p>
+              <ul>
+                <li>Support an accessibility-focused research project on making educational gameplay more inclusive for children with motor impairments.</li>
+                <li>Participate in the design and creation of physical prototypes that extend accessible interaction techniques.</li>
+                <li>Contribute to ongoing research development toward a future UIST submission.</li>
+              </ul>
+            </div>
+
+            <div class="project-block">
+              <h3>ABD-LLM <span class="role-badge role-badge--assistant">Research Assistant</span></h3>
+              <p class="meta-line">04/2025 - Present</p>
+              <p class="meta-sub">Advisors: Jacob O. Wobbrock, James A. Fogarty, Mingyuan Zhong</p>
+              <ul>
+                <li>Contribute to an ongoing ACE Lab project exploring LLM-related interaction design and accessibility questions.</li>
+                <li>Support prototype creation, early research framing, and iterative exploration of potential HCI contributions.</li>
+                <li>Assist with project development toward a future ACM Intelligent User Interfaces submission.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline-item" role="listitem">
+            <header class="timeline-header">
+              <p class="timeline-lab">Department of Human Centered Design &amp; Engineering</p>
+              <p class="timeline-inst">University of Washington</p>
+            </header>
+            <div class="project-block">
+              <h3>"Called It": Prediction and Sensemaking in the 2024 Election <span class="role-badge role-badge--assistant">Research Assistant</span></h3>
+              <p class="meta-line">04/2025 - Present</p>
+              <p class="meta-sub">Advisors: Kate Starbird, Nina Lutz</p>
+              <ul>
+                <li>Coded and analyzed more than 200 cross-platform social media posts from X and TikTok related to speculation during the 2024 U.S. presidential election.</li>
+                <li>Examined how users "called" outcomes under uncertainty and how those narratives circulated across platforms.</li>
+                <li>Refined the qualitative codebook and supported early-stage publication development on election-related meaning-making.</li>
+              </ul>
+            </div>
+
+            <div class="project-block">
+              <h3>Concept Inventories in Computing Education <span class="role-badge role-badge--assistant">Research Assistant</span></h3>
+              <p class="meta-line">01/2023 - 09/2023</p>
+              <p class="meta-sub">Advisors: Sayamindu Dasgupta, Murtaza Ali</p>
+              <ul>
+                <li>Conducted a literature review on 65 papers in the concept inventory field within computing education.</li>
+                <li>Processed thousands of data points from 200+ papers, retaining 100+ for detailed analysis across 10+ variables.</li>
+                <li>Analyzed data with Matplotlib and Seaborn, created visualizations, and co-authored the resulting ICER 2023 publication.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline-item" role="listitem">
+            <header class="timeline-header">
+              <p class="timeline-lab">Tang Lab</p>
+              <p class="timeline-inst">Seattle Children's Hospital</p>
+            </header>
+            <div class="project-block">
+              <h3>Text Database Creation for Human Behavior Research <span class="role-badge role-badge--assistant">Research Assistant</span></h3>
+              <p class="meta-line">11/2023 - 06/2024</p>
+              <p class="meta-sub">Advisor: Jonathan C.Y. Tang</p>
+              <ul>
+                <li>Processed 10,000+ psychological terms and scale statements to build a text database for human behavior research.</li>
+                <li>Applied NLP methods for semantic analysis, sentiment analysis, and term interconnectivity studies.</li>
+                <li>Used UMAP to explore multidimensional shifts in psychological concepts; resulting abstract was accepted at ASSC.</li>
+              </ul>
+            </div>
           </article>
         </div>
       </section>
@@ -247,38 +330,38 @@
 
         <div class="education-list" role="list">
           <article class="education-item" role="listitem">
-            <p class="edu-period">2023 - Present</p>
+            <p class="edu-period">09/2025 - 03/2027</p>
             <div class="edu-content">
-              <h3>Ph.D. in [Your Field]</h3>
-              <p class="meta-line">[University Name], [City, Country]</p>
+              <h3>M.S. in Technology Innovation - Connected Devices</h3>
+              <p class="meta-line">University of Washington, Seattle, WA</p>
               <ul>
-                <li>Advisor: Prof. [Name]</li>
-                <li>Focus: [Research Focus / Keywords]</li>
-                <li>Expected graduation: [Year]</li>
+                <li>Core coursework includes programming for digital and physical interfaces, managing data and signal processing, fabrication, prototyping, and user research.</li>
+                <li>Training bridges hardware/software systems with human-centered design and evaluation.</li>
+                <li>Expected graduation: March 2027.</li>
               </ul>
             </div>
           </article>
 
           <article class="education-item" role="listitem">
-            <p class="edu-period">2019 - 2023</p>
+            <p class="edu-period">09/2021 - 06/2025</p>
             <div class="edu-content">
-              <h3>B.S. in [Major]</h3>
-              <p class="meta-line">[University Name], [City, Country]</p>
+              <h3>B.A. in Communication</h3>
+              <p class="meta-line">University of Washington, Seattle, WA</p>
               <ul>
-                <li>Minor/Track: [Optional]</li>
-                <li>Thesis: [Optional title]</li>
-                <li>Honors/Awards: [Optional]</li>
+                <li>Minors in Informatics and Data Science; GPA: 3.83/4.0.</li>
+                <li>Three-time Annual Dean's List recipient across all quarters.</li>
+                <li>Additional recognition includes an Undergraduate Research Symposium poster, the Deborah Kaplan Award, and the Google UX Design Certificate.</li>
               </ul>
             </div>
           </article>
         </div>
       </section>
 
-      <!-- Teaching & Volunteers Section -->
+      <!-- Teaching & Academic Services Section -->
       <section id="teaching" class="section container">
         <div class="section-heading">
-          <h2>Teaching & Volunteers</h2>
-          <p>Selected teaching and service activities.</p>
+          <h2>Teaching & Academic Services</h2>
+          <p>Selected teaching and academic service activities.</p>
         </div>
 
         <div class="service-grid">
@@ -286,30 +369,20 @@
             <h3>Teaching</h3>
             <ul class="structured-list">
               <li>
-                <span class="item-name">[Course Name]</span>
+                <span class="item-name">INFO 201: Foundational Skills for Data Science</span>
                 <span class="item-role">Teaching Assistant</span>
-                <span class="item-year">2026</span>
-              </li>
-              <li>
-                <span class="item-name">[Course Name]</span>
-                <span class="item-role">Guest Lecturer</span>
-                <span class="item-year">2025</span>
+                <span class="item-year">2024-2025</span>
               </li>
             </ul>
           </article>
 
           <article class="service-card">
-            <h3>Volunteers</h3>
+            <h3>Academic Services</h3>
             <ul class="structured-list">
               <li>
-                <span class="item-name">[Conference/Event Name]</span>
-                <span class="item-role">Student Volunteer</span>
-                <span class="item-year">2025</span>
-              </li>
-              <li>
-                <span class="item-name">[Workshop/Event Name]</span>
-                <span class="item-role">Organizer</span>
-                <span class="item-year">2024</span>
+                <span class="item-name">DIS 2026</span>
+                <span class="item-role">Work in Progress Reviewer</span>
+                <span class="item-year">2026</span>
               </li>
             </ul>
           </article>
@@ -337,5 +410,104 @@
     <footer class="site-footer container">
       <p>© 2026 Mengqi Shi. Last updated: 02.2026.</p>
     </footer>
+
+    <script>
+      (() => {
+        const finePointer = window.matchMedia("(pointer: fine)").matches;
+        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        if (!finePointer || reduceMotion) return;
+
+        const trail = document.querySelector(".cursor-trail");
+        const lead = document.querySelector(".cursor-trail__lead");
+        const canvas = document.querySelector(".cursor-trail__canvas");
+        if (!trail || !lead || !canvas) return;
+
+        document.body.classList.add("trail-cursor-enabled");
+
+        const ctx = canvas.getContext("2d");
+        if (!ctx) return;
+
+        const history = [];
+        const trailDuration = 550;
+        const visibleTrailDuration = 280;
+        let mouseX = window.innerWidth / 2;
+        let mouseY = window.innerHeight / 2;
+        let isVisible = false;
+
+        const resizeCanvas = () => {
+          const ratio = window.devicePixelRatio || 1;
+          canvas.width = Math.floor(window.innerWidth * ratio);
+          canvas.height = Math.floor(window.innerHeight * ratio);
+          canvas.style.width = `${window.innerWidth}px`;
+          canvas.style.height = `${window.innerHeight}px`;
+          ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+        };
+
+        const pushPoint = (x, y, time) => {
+          history.push({ x, y, time });
+          while (history.length > 0 && time - history[0].time > trailDuration + 120) {
+            history.shift();
+          }
+        };
+
+        const render = (now) => {
+          pushPoint(mouseX, mouseY, now);
+          ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+
+          if (isVisible) {
+            lead.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+            const points = history.filter((point) => now - point.time <= visibleTrailDuration);
+            if (points.length > 1) {
+              ctx.lineCap = "round";
+              ctx.lineJoin = "round";
+              for (let i = 1; i < points.length; i += 1) {
+                const prev = points[i - 1];
+                const current = points[i];
+                const ageRatio = i / (points.length - 1);
+                const alpha = 0.03 + ageRatio * 0.2;
+                const width = 2.2 + ageRatio * 1.8;
+
+                ctx.strokeStyle = `rgba(214, 144, 171, ${alpha})`;
+                ctx.lineWidth = width;
+                ctx.beginPath();
+                ctx.moveTo(prev.x, prev.y);
+                ctx.lineTo(current.x, current.y);
+                ctx.stroke();
+              }
+            }
+          }
+
+          requestAnimationFrame(render);
+        };
+
+        window.addEventListener("mousemove", (event) => {
+          mouseX = event.clientX;
+          mouseY = event.clientY;
+          if (!isVisible) {
+            isVisible = true;
+            trail.classList.add("is-visible");
+          }
+        });
+
+        window.addEventListener("mousedown", () => {
+          trail.classList.add("is-pressed");
+        });
+
+        window.addEventListener("mouseup", () => {
+          trail.classList.remove("is-pressed");
+        });
+
+        document.addEventListener("mouseleave", () => {
+          isVisible = false;
+          trail.classList.remove("is-visible", "is-pressed");
+          ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+        });
+
+        window.addEventListener("resize", resizeCanvas);
+        resizeCanvas();
+        requestAnimationFrame(render);
+      })();
+    </script>
   </body>
 </html>
