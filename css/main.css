@@ -503,10 +503,10 @@ h2 {
 .timeline-item::before {
   content: "";
   position: absolute;
-  left: -1.64rem;
+  left: calc(-1.15rem - 6px);
   top: 0.45rem;
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   background: var(--accent);
 }
@@ -908,22 +908,79 @@ h2 {
   height: 100%;
   position: relative;
   background:
-    radial-gradient(circle at 12% 78%, rgba(255, 255, 255, 0.4) 0 80px, transparent 82px),
-    radial-gradient(circle at 88% 26%, rgba(255, 255, 255, 0.32) 0 70px, transparent 72px),
-    linear-gradient(120deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0) 45%),
-    linear-gradient(180deg, rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.03));
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(0, 0, 0, 0.04));
+}
+
+.detail-hero-art::before,
+.detail-hero-art::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
 }
 
 .detail-hero--warm .detail-hero-art {
-  background-color: #cda28f;
+  background:
+    radial-gradient(circle at 16% 28%, rgba(255, 244, 233, 0.78) 0 90px, transparent 92px),
+    radial-gradient(circle at 74% 68%, rgba(125, 81, 63, 0.18) 0 160px, transparent 162px),
+    linear-gradient(135deg, #f0d2c2 0%, #d4a38f 44%, #b98275 100%);
+}
+
+.detail-hero--warm .detail-hero-art::before {
+  background:
+    linear-gradient(115deg, transparent 0 18%, rgba(255, 255, 255, 0.22) 18% 22%, transparent 22% 100%),
+    linear-gradient(115deg, transparent 0 46%, rgba(255, 255, 255, 0.14) 46% 49%, transparent 49% 100%);
+  opacity: 0.8;
+}
+
+.detail-hero--warm .detail-hero-art::after {
+  background:
+    radial-gradient(circle at 84% 30%, rgba(255, 255, 255, 0.16) 0 64px, transparent 66px),
+    radial-gradient(circle at 24% 76%, rgba(90, 55, 45, 0.08) 0 110px, transparent 112px);
 }
 
 .detail-hero--peach .detail-hero-art {
-  background-color: #d2ac9d;
+  background:
+    radial-gradient(circle at 18% 72%, rgba(255, 248, 241, 0.8) 0 82px, transparent 84px),
+    radial-gradient(circle at 82% 24%, rgba(163, 106, 86, 0.18) 0 130px, transparent 132px),
+    linear-gradient(135deg, #f4ddd2 0%, #d8b09f 46%, #c28676 100%);
+}
+
+.detail-hero--peach .detail-hero-art::before {
+  background:
+    repeating-linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.16) 0 10px,
+      rgba(255, 255, 255, 0) 10px 28px
+    );
+  opacity: 0.5;
+}
+
+.detail-hero--peach .detail-hero-art::after {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 58%),
+    radial-gradient(circle at 68% 58%, rgba(126, 84, 69, 0.09) 0 88px, transparent 90px);
 }
 
 .detail-hero--sage .detail-hero-art {
-  background-color: #92aa99;
+  background:
+    radial-gradient(circle at 22% 26%, rgba(241, 248, 242, 0.78) 0 88px, transparent 90px),
+    radial-gradient(circle at 80% 72%, rgba(53, 88, 73, 0.16) 0 150px, transparent 152px),
+    linear-gradient(135deg, #c5d4ca 0%, #97af9d 44%, #6f8e7d 100%);
+}
+
+.detail-hero--sage .detail-hero-art::before {
+  background:
+    linear-gradient(90deg, transparent 0 8%, rgba(255, 255, 255, 0.14) 8% 9%, transparent 9% 100%),
+    linear-gradient(90deg, transparent 0 32%, rgba(255, 255, 255, 0.1) 32% 33%, transparent 33% 100%),
+    linear-gradient(90deg, transparent 0 56%, rgba(255, 255, 255, 0.08) 56% 57%, transparent 57% 100%);
+  opacity: 0.7;
+}
+
+.detail-hero--sage .detail-hero-art::after {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), transparent 62%),
+    radial-gradient(circle at 72% 32%, rgba(255, 255, 255, 0.1) 0 54px, transparent 56px);
 }
 
 .detail-intro {
