@@ -706,22 +706,34 @@ h2 {
   border: 1px solid transparent;
 }
 
-.pub-tags .tag-method {
+.pub-tags .tag-method,
+.pub-tags .tag-qualitative,
+.pub-tags .tag-literature {
   background: #f2edf0;
   border-color: #e8dde3;
 }
 
-.pub-tags .tag-system {
+.pub-tags .tag-system,
+.pub-tags .tag-responsible,
+.pub-tags .tag-conversational,
+.pub-tags .tag-computing-ed,
+.pub-tags .tag-ai-literacy {
   background: #edf2f2;
   border-color: #dde7e7;
 }
 
-.pub-tags .tag-analysis {
+.pub-tags .tag-analysis,
+.pub-tags .tag-thematic,
+.pub-tags .tag-dataviz {
   background: #f3f0ec;
   border-color: #e8e0d7;
 }
 
-.pub-tags .tag-domain {
+.pub-tags .tag-domain,
+.pub-tags .tag-hai,
+.pub-tags .tag-older-adults,
+.pub-tags .tag-synthesis,
+.pub-tags .tag-learning-design {
   background: #f0edf4;
   border-color: #e2dcef;
 }
@@ -729,6 +741,15 @@ h2 {
 .pub-links {
   margin: 0.34rem 0 0;
   font-size: 0.92rem;
+}
+
+.pub-inline-status {
+  color: #a66e83;
+  font-size: 0.9em;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(166, 110, 131, 0.4);
+  text-underline-offset: 0.16em;
 }
 
 .pub-item:hover .pub-thumb {
