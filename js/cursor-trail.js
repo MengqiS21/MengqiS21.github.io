@@ -1,6 +1,7 @@
 (() => {
   const finePointer = window.matchMedia("(pointer: fine)").matches;
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const catCursorKey = "mengqi-cat-cursor-active";
 
   if (!finePointer || reduceMotion) return;
 
@@ -13,7 +14,23 @@
   const applyCatCursorState = (active) => {
     document.body.classList.toggle("cat-cursor-active", active);
   };
-  applyCatCursorState(false);
+  const readCatCursorState = () => {
+    try {
+      return localStorage.getItem(catCursorKey) === "true";
+    } catch {
+      return false;
+    }
+  };
+
+  const writeCatCursorState = (active) => {
+    try {
+      localStorage.setItem(catCursorKey, String(active));
+    } catch {
+      // Ignore storage access failures and still update the current page state.
+    }
+  };
+
+  applyCatCursorState(readCatCursorState());
 
   const ctx = canvas.getContext("2d");
   if (!ctx) return;
@@ -124,6 +141,7 @@
       }
 
       const nextState = !document.body.classList.contains("cat-cursor-active");
+      writeCatCursorState(nextState);
       applyCatCursorState(nextState);
 
       const target = brand.getAttribute("href");
@@ -134,6 +152,12 @@
         }
       }
     });
+  });
+
+  window.addEventListener("storage", (event) => {
+    if (event.key === catCursorKey) {
+      applyCatCursorState(event.newValue === "true");
+    }
   });
 })();
 
