@@ -287,7 +287,7 @@ img {
   color: var(--text-soft);
   font-size: 0.93rem;
   overflow-y: auto;
-  padding-right: 0.35rem;
+  padding-right: 0.85rem;
   scrollbar-width: thin;
   scrollbar-color: rgba(166, 110, 131, 0.35) transparent;
   flex: 1;
@@ -295,7 +295,7 @@ img {
 }
 
 .compact-list::-webkit-scrollbar {
-  width: 7px;
+  width: 6px;
 }
 
 .compact-list::-webkit-scrollbar-track {
