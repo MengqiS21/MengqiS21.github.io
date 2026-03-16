@@ -34,7 +34,18 @@
     <header class="site-header">
       <div class="container nav-wrap">
         <a class="brand" href="#home">Mengqi Shi</a>
-        <nav aria-label="Primary navigation">
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-nav"
+          aria-label="Open navigation menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">
           <ul class="nav-list">
             <li><a href="#home">Home</a></li>
             <li><a href="#research">Research Interests</a></li>
@@ -451,5 +462,6 @@
     </footer>
 
     <script src="js/cursor-trail.js"></script>
+    <script src="js/mobile-nav.js"></script>
   </body>
 </html>
