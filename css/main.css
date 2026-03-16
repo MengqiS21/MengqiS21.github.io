@@ -21,6 +21,19 @@ html {
   scroll-behavior: smooth;
 }
 
+a[x-apple-data-detectors],
+a[x-apple-data-detectors-type],
+a[x-apple-data-detectors-type="calendar-event"],
+a[x-apple-data-detectors-type="date"],
+a[x-apple-data-detectors-type="telephone"] {
+  color: inherit !important;
+  text-decoration: none !important;
+  font-size: inherit !important;
+  font-family: inherit !important;
+  font-weight: inherit !important;
+  line-height: inherit !important;
+}
+
 ::selection {
   background: transparent;
   color: var(--text-main);
