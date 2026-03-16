@@ -162,8 +162,8 @@ img {
 body.cat-cursor-active .cursor-trail__lead {
   width: 24px;
   height: 24px;
-  margin-left: -12px;
-  margin-top: -12px;
+  margin-left: -9px;
+  margin-top: -20px;
   border-radius: 0;
   background: rgba(214, 144, 171, 0.98);
   box-shadow: 0 0 14px rgba(214, 144, 171, 0.12);
@@ -192,8 +192,8 @@ body.cat-cursor-active .cursor-trail__lead::after {
 body.cat-cursor-active .cursor-trail.is-pressed .cursor-trail__lead {
   width: 22px;
   height: 22px;
-  margin-left: -11px;
-  margin-top: -11px;
+  margin-left: -8px;
+  margin-top: -18px;
 }
 
 .container {
