@@ -10,6 +10,10 @@
   if (!trail || !lead || !canvas) return;
 
   document.body.classList.add("trail-cursor-enabled");
+  const applyCatCursorState = (active) => {
+    document.body.classList.toggle("cat-cursor-active", active);
+  };
+  applyCatCursorState(false);
 
   const ctx = canvas.getContext("2d");
   if (!ctx) return;
@@ -19,6 +23,9 @@
   const visibleTrailDuration = 280;
   let mouseX = window.innerWidth / 2;
   let mouseY = window.innerHeight / 2;
+  let lastMouseX = mouseX;
+  let lastMouseY = mouseY;
+  let leadDirection = 1;
   let isVisible = false;
 
   const resizeCanvas = () => {
@@ -42,7 +49,20 @@
     ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
 
     if (isVisible) {
-      lead.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+      const dx = mouseX - lastMouseX;
+      const dy = mouseY - lastMouseY;
+      if (Math.abs(dx) + Math.abs(dy) > 0.2) {
+        if (Math.abs(dx) > 0.4) {
+          leadDirection = dx >= 0 ? 1 : -1;
+        }
+        lastMouseX = mouseX;
+        lastMouseY = mouseY;
+      }
+
+      const isCat = document.body.classList.contains("cat-cursor-active");
+      lead.style.transform = isCat
+        ? `translate(${mouseX}px, ${mouseY}px) scaleX(${leadDirection})`
+        : `translate(${mouseX}px, ${mouseY}px)`;
       const points = history.filter((point) => now - point.time <= visibleTrailDuration);
       if (points.length > 1) {
         ctx.lineCap = "round";
@@ -73,6 +93,8 @@
     if (!isVisible) {
       isVisible = true;
       trail.classList.add("is-visible");
+      lastMouseX = mouseX;
+      lastMouseY = mouseY;
     }
   });
 
@@ -93,6 +115,26 @@
   window.addEventListener("resize", resizeCanvas);
   resizeCanvas();
   requestAnimationFrame(render);
+
+  const brandLinks = Array.from(document.querySelectorAll(".brand"));
+  brandLinks.forEach((brand) => {
+    brand.addEventListener("click", (event) => {
+      if (brand.getAttribute("href")?.startsWith("#")) {
+        event.preventDefault();
+      }
+
+      const nextState = !document.body.classList.contains("cat-cursor-active");
+      applyCatCursorState(nextState);
+
+      const target = brand.getAttribute("href");
+      if (target && target.startsWith("#")) {
+        const section = document.querySelector(target);
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }
+    });
+  });
 })();
 
 (() => {

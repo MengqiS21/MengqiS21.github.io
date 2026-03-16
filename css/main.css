@@ -140,6 +140,7 @@ img {
   border-radius: 50%;
   transform: translate(-120px, -120px);
   will-change: transform;
+  transform-origin: center;
 }
 
 .cursor-trail__lead {
@@ -151,11 +152,48 @@ img {
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.36), 0 0 18px rgba(214, 144, 171, 0.18);
 }
 
+.cursor-trail__lead::before,
+.cursor-trail__lead::after {
+  content: "";
+  position: absolute;
+  opacity: 0;
+}
+
+body.cat-cursor-active .cursor-trail__lead {
+  width: 24px;
+  height: 24px;
+  margin-left: -12px;
+  margin-top: -12px;
+  border-radius: 0;
+  background: rgba(214, 144, 171, 0.98);
+  box-shadow: 0 0 14px rgba(214, 144, 171, 0.12);
+  -webkit-mask-image: url("../assets/images/cat-cursor.svg");
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+  mask-image: url("../assets/images/cat-cursor.svg");
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+}
+
+body.cat-cursor-active .cursor-trail__lead::before,
+body.cat-cursor-active .cursor-trail__lead::after {
+  opacity: 0;
+}
+
 .cursor-trail.is-pressed .cursor-trail__lead {
   width: 10px;
   height: 10px;
   margin-left: -5px;
   margin-top: -5px;
+}
+
+body.cat-cursor-active .cursor-trail.is-pressed .cursor-trail__lead {
+  width: 22px;
+  height: 22px;
+  margin-left: -11px;
+  margin-top: -11px;
 }
 
 .container {
@@ -1030,7 +1068,7 @@ h2 {
   height: 100%;
   position: relative;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(0, 0, 0, 0.04));
+    linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.04));
 }
 
 .detail-hero-art::before,
@@ -1043,66 +1081,66 @@ h2 {
 
 .detail-hero--warm .detail-hero-art {
   background:
-    radial-gradient(circle at 16% 28%, rgba(255, 244, 233, 0.78) 0 90px, transparent 92px),
-    radial-gradient(circle at 74% 68%, rgba(125, 81, 63, 0.18) 0 160px, transparent 162px),
-    linear-gradient(135deg, #f0d2c2 0%, #d4a38f 44%, #b98275 100%);
+    radial-gradient(circle at 18% 30%, rgba(255, 250, 246, 0.72) 0 110px, transparent 112px),
+    radial-gradient(circle at 76% 66%, rgba(208, 167, 150, 0.16) 0 180px, transparent 182px),
+    linear-gradient(135deg, #fbf1eb 0%, #efd9cf 48%, #e1c2b6 100%);
 }
 
 .detail-hero--warm .detail-hero-art::before {
   background:
-    linear-gradient(115deg, transparent 0 18%, rgba(255, 255, 255, 0.22) 18% 22%, transparent 22% 100%),
-    linear-gradient(115deg, transparent 0 46%, rgba(255, 255, 255, 0.14) 46% 49%, transparent 49% 100%);
-  opacity: 0.8;
+    linear-gradient(118deg, transparent 0 22%, rgba(255, 255, 255, 0.22) 22% 24%, transparent 24% 100%),
+    linear-gradient(118deg, transparent 0 52%, rgba(255, 255, 255, 0.14) 52% 54%, transparent 54% 100%);
+  opacity: 0.55;
 }
 
 .detail-hero--warm .detail-hero-art::after {
   background:
-    radial-gradient(circle at 84% 30%, rgba(255, 255, 255, 0.16) 0 64px, transparent 66px),
-    radial-gradient(circle at 24% 76%, rgba(90, 55, 45, 0.08) 0 110px, transparent 112px);
+    radial-gradient(circle at 84% 28%, rgba(255, 255, 255, 0.2) 0 74px, transparent 76px),
+    radial-gradient(circle at 26% 78%, rgba(182, 142, 126, 0.08) 0 120px, transparent 122px);
 }
 
 .detail-hero--peach .detail-hero-art {
   background:
-    radial-gradient(circle at 18% 72%, rgba(255, 248, 241, 0.8) 0 82px, transparent 84px),
-    radial-gradient(circle at 82% 24%, rgba(163, 106, 86, 0.18) 0 130px, transparent 132px),
-    linear-gradient(135deg, #f4ddd2 0%, #d8b09f 46%, #c28676 100%);
+    radial-gradient(circle at 20% 74%, rgba(255, 251, 247, 0.76) 0 94px, transparent 96px),
+    radial-gradient(circle at 82% 24%, rgba(220, 181, 165, 0.16) 0 150px, transparent 152px),
+    linear-gradient(135deg, #fcf3ee 0%, #efd8ce 48%, #dfbeb2 100%);
 }
 
 .detail-hero--peach .detail-hero-art::before {
   background:
     repeating-linear-gradient(
       135deg,
-      rgba(255, 255, 255, 0.16) 0 10px,
-      rgba(255, 255, 255, 0) 10px 28px
+      rgba(255, 255, 255, 0.12) 0 10px,
+      rgba(255, 255, 255, 0) 10px 30px
     );
-  opacity: 0.5;
+  opacity: 0.32;
 }
 
 .detail-hero--peach .detail-hero-art::after {
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 58%),
-    radial-gradient(circle at 68% 58%, rgba(126, 84, 69, 0.09) 0 88px, transparent 90px);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.12), transparent 60%),
+    radial-gradient(circle at 68% 58%, rgba(193, 152, 137, 0.08) 0 96px, transparent 98px);
 }
 
 .detail-hero--sage .detail-hero-art {
   background:
-    radial-gradient(circle at 22% 26%, rgba(241, 248, 242, 0.78) 0 88px, transparent 90px),
-    radial-gradient(circle at 80% 72%, rgba(53, 88, 73, 0.16) 0 150px, transparent 152px),
-    linear-gradient(135deg, #c5d4ca 0%, #97af9d 44%, #6f8e7d 100%);
+    radial-gradient(circle at 22% 26%, rgba(248, 252, 248, 0.76) 0 96px, transparent 98px),
+    radial-gradient(circle at 80% 72%, rgba(153, 182, 166, 0.16) 0 164px, transparent 166px),
+    linear-gradient(135deg, #eef4ef 0%, #d8e5dc 48%, #bfd2c5 100%);
 }
 
 .detail-hero--sage .detail-hero-art::before {
   background:
-    linear-gradient(90deg, transparent 0 8%, rgba(255, 255, 255, 0.14) 8% 9%, transparent 9% 100%),
-    linear-gradient(90deg, transparent 0 32%, rgba(255, 255, 255, 0.1) 32% 33%, transparent 33% 100%),
-    linear-gradient(90deg, transparent 0 56%, rgba(255, 255, 255, 0.08) 56% 57%, transparent 57% 100%);
-  opacity: 0.7;
+    linear-gradient(90deg, transparent 0 10%, rgba(255, 255, 255, 0.12) 10% 11%, transparent 11% 100%),
+    linear-gradient(90deg, transparent 0 34%, rgba(255, 255, 255, 0.08) 34% 35%, transparent 35% 100%),
+    linear-gradient(90deg, transparent 0 58%, rgba(255, 255, 255, 0.06) 58% 59%, transparent 59% 100%);
+  opacity: 0.42;
 }
 
 .detail-hero--sage .detail-hero-art::after {
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.06), transparent 62%),
-    radial-gradient(circle at 72% 32%, rgba(255, 255, 255, 0.1) 0 54px, transparent 56px);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.12), transparent 64%),
+    radial-gradient(circle at 72% 32%, rgba(255, 255, 255, 0.12) 0 62px, transparent 64px);
 }
 
 .detail-intro {
