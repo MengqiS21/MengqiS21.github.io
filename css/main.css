@@ -21,6 +21,49 @@ html {
   scroll-behavior: smooth;
 }
 
+::selection {
+  background: transparent;
+  color: var(--text-main);
+}
+
+::-moz-selection {
+  background: transparent;
+  color: var(--text-main);
+}
+
+.selection-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9996;
+}
+
+.selection-rect {
+  position: fixed;
+  border-radius: 2px;
+  background: rgba(200, 151, 169, 0.28);
+  pointer-events: none;
+}
+
+.selection-accent {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 0;
+  border-radius: 999px;
+  background: rgba(166, 110, 131, 0.72);
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-100px, -100px);
+  transition: opacity 0.14s ease, height 0.14s ease;
+  z-index: 9998;
+}
+
+.selection-accent.is-visible {
+  opacity: 1;
+}
+
 body {
   margin: 0;
   font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;

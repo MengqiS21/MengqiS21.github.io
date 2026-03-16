@@ -94,3 +94,93 @@
   resizeCanvas();
   requestAnimationFrame(render);
 })();
+
+(() => {
+  const layer = document.createElement("div");
+  layer.className = "selection-layer";
+  document.body.appendChild(layer);
+
+  const accent = document.createElement("div");
+  accent.className = "selection-accent";
+  document.body.appendChild(accent);
+
+  const clearRects = () => {
+    layer.replaceChildren();
+  };
+
+  const hideAccent = () => {
+    accent.classList.remove("is-visible");
+  };
+
+  const hideSelectionUI = () => {
+    clearRects();
+    hideAccent();
+  };
+
+  const getFocusRect = (selection) => {
+    if (!selection.focusNode) return null;
+
+    try {
+      const focusRange = document.createRange();
+      focusRange.setStart(selection.focusNode, selection.focusOffset);
+      focusRange.collapse(true);
+      const rect = focusRange.getBoundingClientRect();
+      if (rect && rect.height) return rect;
+    } catch {
+      return null;
+    }
+
+    return null;
+  };
+
+  const updateAccent = () => {
+    const selection = window.getSelection();
+    if (!selection || selection.rangeCount === 0 || selection.isCollapsed) {
+      hideSelectionUI();
+      return;
+    }
+
+    const range = selection.getRangeAt(0);
+    if (!range.toString().trim()) {
+      hideSelectionUI();
+      return;
+    }
+
+    clearRects();
+    const rects = Array.from(range.getClientRects()).filter((rect) => rect.width > 0 && rect.height > 0);
+    rects.forEach((rect) => {
+      const rectEl = document.createElement("div");
+      rectEl.className = "selection-rect";
+      rectEl.style.left = `${rect.left}px`;
+      rectEl.style.top = `${rect.top}px`;
+      rectEl.style.width = `${rect.width}px`;
+      rectEl.style.height = `${rect.height}px`;
+      layer.appendChild(rectEl);
+    });
+
+    let rect = getFocusRect(selection);
+
+    if (!rect) {
+      rect = rects.length ? rects[rects.length - 1] : range.getBoundingClientRect();
+    }
+
+    if (!rect || !rect.height) {
+      hideSelectionUI();
+      return;
+    }
+
+    const x = Math.max(0, rect.right - 1.5);
+    const y = rect.top;
+    accent.style.height = `${Math.max(18, rect.height)}px`;
+    accent.style.transform = `translate(${x}px, ${y}px)`;
+    accent.classList.add("is-visible");
+  };
+
+  document.addEventListener("selectionchange", () => {
+    requestAnimationFrame(updateAccent);
+  });
+
+  document.addEventListener("mousedown", hideSelectionUI);
+  window.addEventListener("scroll", () => requestAnimationFrame(updateAccent), { passive: true });
+  window.addEventListener("resize", hideSelectionUI);
+})();
