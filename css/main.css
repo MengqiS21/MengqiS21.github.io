@@ -258,6 +258,7 @@ body.cat-cursor-active .cursor-trail.is-pressed .cursor-trail__lead {
 
 .primary-nav {
   overflow: visible;
+  margin-right: 0.9rem;
 }
 
 .brand {
@@ -1382,6 +1383,7 @@ h2 {
     position: absolute;
     top: calc(100% + 0.55rem);
     right: 0;
+    margin-right: 0;
     width: min(84vw, 320px);
     padding: 0.3rem;
     background: rgba(255, 255, 255, 0.98);
