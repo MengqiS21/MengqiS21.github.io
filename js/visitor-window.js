@@ -113,7 +113,7 @@
       if (countryCount > 0) {
         counts.textContent = countryCount + " countries" + (topCountryNames.length ? " · " + topCountryNames.join(", ") : "") + (remainder ? " +" + remainder : "");
       } else if (totalViews > 0) {
-        counts.textContent = "live visitor count";
+        counts.textContent = totalViews.toLocaleString() + " total visits";
       } else {
         counts.textContent = "first world log soon";
       }
