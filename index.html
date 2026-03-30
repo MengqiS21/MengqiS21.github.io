@@ -23,7 +23,9 @@
     <link rel="icon" type="image/png" href="favicon.png?v=3" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg?v=3" />
     <link rel="shortcut icon" href="favicon.ico?v=3" />
-    <link rel="stylesheet" href="css/main.css?v=9" />
+    <link rel="stylesheet" href="css/main.css?v=10" />
+    <script src="js/site-config.js?v=1"></script>
+    <script src="js/goatcounter.js?v=1"></script>
   </head>
   <body>
     <div class="cursor-trail" aria-hidden="true">
@@ -459,18 +461,55 @@
 
       <!-- Links Section -->
       <section id="misc" class="section container">
-        <div class="section-heading">
-          <h2>Misc</h2>
-          <p>A small corner for side projects and everyday interests.</p>
-        </div>
+        <div class="misc-layout">
+          <div>
+            <div class="section-heading misc-heading">
+              <h2>Misc</h2>
+              <p>A small corner for side projects and everyday interests.</p>
+            </div>
 
-        <div class="personal-mini">
-          <ul class="links-list links-list--quiet">
-            <li><a href="random/design.html">Design</a></li>
-            <li><a href="random/photography.html">Photography</a></li>
-            <li><a href="random/reading.html">Reading List</a></li>
-            <li><a href="random/thoughts.html">Thoughts</a></li>
-          </ul>
+            <div class="personal-mini">
+              <ul class="links-list links-list--quiet">
+                <li><a href="random/design.html">Design</a></li>
+                <li><a href="random/photography.html">Photography</a></li>
+                <li><a href="random/reading.html">Reading List</a></li>
+                <li><a href="random/thoughts.html">Thoughts</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <aside class="visitor-panel" aria-label="Visitor window" data-visitor-source="assets/data/visitor-window.json">
+            <p class="visitor-panel__eyebrow">Visitor Window</p>
+            <div class="visitor-panel__world" aria-hidden="true">
+              <span class="pixel pixel--rose pixel-a1"></span>
+              <span class="pixel pixel--rose pixel-a2"></span>
+              <span class="pixel pixel--blush pixel-a3"></span>
+              <span class="pixel pixel--ink pixel-a4"></span>
+              <span class="pixel pixel--sand pixel-a5"></span>
+              <span class="pixel pixel--rose pixel-b1"></span>
+              <span class="pixel pixel--ink pixel-b2"></span>
+              <span class="pixel pixel--blush pixel-b3"></span>
+              <span class="pixel pixel--rose pixel-b4"></span>
+              <span class="pixel pixel--sand pixel-b5"></span>
+              <span class="pixel pixel--ink pixel-c1"></span>
+              <span class="pixel pixel--rose pixel-c2"></span>
+              <span class="pixel pixel--sand pixel-c3"></span>
+              <span class="pixel pixel--blush pixel-c4"></span>
+              <span class="pixel pixel--rose pixel-c5"></span>
+              <span class="pixel pixel--sand pixel-d1"></span>
+              <span class="pixel pixel--rose pixel-d2"></span>
+              <span class="pixel pixel--ink pixel-d3"></span>
+              <span class="pixel pixel--rose pixel-d4"></span>
+              <span class="pixel pixel--blush pixel-d5"></span>
+              <span class="ping ping--one"></span>
+              <span class="ping ping--two"></span>
+              <span class="ping ping--three"></span>
+            </div>
+            <div class="visitor-panel__meta">
+              <span class="visitor-panel__status">visitor data warming up</span>
+              <span class="visitor-panel__counts">first world log soon</span>
+            </div>
+          </aside>
         </div>
       </section>
     </main>
@@ -479,6 +518,7 @@
       <p>© 2026 Mengqi Shi. Last updated: 03.2026.</p>
     </footer>
 
+    <script src="js/visitor-window.js?v=1"></script>
     <script src="js/cursor-trail.js?v=6"></script>
     <script src="js/mobile-nav.js?v=1"></script>
   </body>

@@ -1,0 +1,40 @@
+name: Update Visitor Window
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 15 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  sync-visitor-window:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Sync visitor data from GoatCounter
+        env:
+          GOATCOUNTER_BASE_URL: ${{ secrets.GOATCOUNTER_BASE_URL }}
+          GOATCOUNTER_API_KEY: ${{ secrets.GOATCOUNTER_API_KEY }}
+        run: node scripts/update-visitor-window.mjs
+
+      - name: Commit updated visitor data
+        run: |
+          if git diff --quiet -- assets/data/visitor-window.json; then
+            echo "No visitor data changes to commit."
+            exit 0
+          fi
+          git config user.name "codex-visitor-window"
+          git config user.email "codex-visitor-window@users.noreply.github.com"
+          git add assets/data/visitor-window.json
+          git commit -m "Update visitor window data"
+          git push
