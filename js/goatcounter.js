@@ -10,7 +10,7 @@
 
   var script = document.createElement("script");
   script.async = true;
-  script.src = baseUrl + "/count.js";
+  script.src = "https://gc.zgo.at/count.js";
   script.dataset.goatcounter = baseUrl + "/count";
   document.head.appendChild(script);
 })();
