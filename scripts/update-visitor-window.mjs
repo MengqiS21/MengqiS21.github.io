@@ -274,6 +274,7 @@ async function syncLocationsFromExport(existingData) {
     ? gunzipSync(downloadBuffer).toString("utf8")
     : downloadBuffer.toString("utf8");
   const rows = parseCsv(csv);
+  console.log(`GoatCounter export returned ${rows.length} row(s).`);
 
   if (!rows.length) {
     return {
@@ -284,6 +285,7 @@ async function syncLocationsFromExport(existingData) {
 
   const [rawHeader, ...rawDataRows] = rows;
   const headers = normalizeHeaders(rawHeader);
+  console.log(`GoatCounter export headers: ${headers.join(" | ")}`);
   const locationIndex = headers.indexOf("Location");
   const botIndex = headers.indexOf("Bot");
   const eventIndex = headers.indexOf("Event");
@@ -291,6 +293,12 @@ async function syncLocationsFromExport(existingData) {
   if (locationIndex === -1 || botIndex === -1 || eventIndex === -1) {
     throw new Error("GoatCounter export format changed; required columns are missing.");
   }
+
+  rawDataRows.slice(0, 5).forEach((row, index) => {
+    console.log(
+      `Export sample ${index + 1}: location=${JSON.stringify(row[locationIndex] || "")} bot=${JSON.stringify(row[botIndex] || "")} event=${JSON.stringify(row[eventIndex] || "")}`
+    );
+  });
 
   const countryTotals = { ...(existingData.countryTotals || {}) };
 
